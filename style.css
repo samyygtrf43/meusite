@@ -1,0 +1,282 @@
+/* ====== Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ====== Header com efeito Glass ====== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 50px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 0, 51, 0.3);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff0033;
+  transition: 0.3s;
+}
+
+.logo span {
+  color: #fff;
+}
+
+.logo:hover {
+  text-shadow: 0 0 15px #ff0033, 0 0 30px #ff0033;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff0033;
+  text-shadow: 0 0 10px #ff0033;
+}
+
+/* ====== Hero ====== */
+.hero {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1527443224154-9f531d52f63c?auto=format&fit=crop&w=1950&q=80") 
+              no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #ff0033;
+  text-shadow: 0 0 20px #ff0033;
+}
+
+.hero-text p {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+/* ====== Botão Neon ====== */
+.neon-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: transparent;
+  border: 2px solid #ff0033;
+  color: #ff0033;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #ff0033, 0 0 20px rgba(255, 0, 51, 0.5);
+}
+
+.neon-btn:hover {
+  background: #ff0033;
+  color: #fff;
+  box-shadow: 0 0 20px #ff0033, 0 0 40px #ff0033;
+  transform: scale(1.05);
+}
+
+/* ====== Serviços ====== */
+.servicos {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.servicos h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #ff0033;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 0, 51, 0.3);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px #ff0033, 0 0 50px rgba(255, 0, 51, 0.7);
+}
+
+/* ====== Sobre ====== */
+.sobre {
+  padding: 80px 20px;
+  text-align: center;
+  background: #0f0f0f;
+}
+
+.sobre h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #ff0033;
+}
+
+/* ====== Contato ====== */
+.contato {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contato h2 {
+  margin-bottom: 20px;
+  color: #ff0033;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+}
+
+form input,
+form textarea,
+form button {
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+}
+
+form input,
+form textarea {
+  background: #1c1c1c;
+  color: #fff;
+}
+
+form button {
+  cursor: pointer;
+}
+
+/* ====== Footer ====== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 0, 51, 0.3);
+}
+
+/* ====== Animações ====== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease forwards;
+
+  /* ======== PREÇOS ======== */
+.precos {
+  padding: 80px 10%;
+  background: rgba(20, 20, 20, 0.9);
+  text-align: center;
+  color: #fff;
+}
+
+.precos h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+.tabela-precos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #00ffcc;
+}
+
+.card p {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
+}
+
+.card span {
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.observacoes {
+  grid-column: 1 / -1;
+  background: #222;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.observacoes h4 {
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.observacoes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.observacoes li {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+}
