@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Promoções - Assistência da SAMY</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #b30000;
+      padding: 20px;
+      box-shadow: 0 0 15px #ff0000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4444;
+      margin: 0;
+    }
+
+    .btn-voltar {
+      background: #ff0000;
+      color: #fff;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff0000, 0 0 20px #ff4444;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn-voltar:hover {
+      background: #ff4444;
+      transform: scale(1.1);
+    }
+
+    /* Banner de boas-vindas */
+    .welcome-banner {
+      background: linear-gradient(90deg, #ff0000, #b30000);
+      color: #fff;
+      padding: 15px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px #000, 0 0 20px #ff4444;
+      box-shadow: 0 0 15px #ff0000;
+    }
+
+    .promo-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .promo-card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #ff0000;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .promo-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #ff0000, 0 0 35px #ff4444;
+    }
+
+    .promo-card h3 {
+      color: #ff4444;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px #ff0000, 0 0 15px #ff4444;
+    }
+
+    .promo-card p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    .btn-promo {
+      background: #ff0000;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 10px #ff0000, 0 0 20px #ff4444;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn-promo:hover {
+      background: #ff4444;
+      transform: scale(1.1);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background: #b30000;
+      color: #fff;
+      font-size: 0.9rem;
+      box-shadow: 0 0 10px #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎉 Promoções Exclusivas 🎉</h1>
+    <button class="btn-voltar" onclick="window.location.href='index.html'">⬅ Voltar ao Site</button>
+  </header>
+
+  <!-- Banner de boas-vindas -->
+  <div class="welcome-banner" id="welcomeBanner">
+    👋 Bem-vindo à Área Exclusiva de Promoções, usuário!
+  </div>
+
+  <section class="promo-container">
+    <div class="promo-card">
+      <h3>Pacote Básico</h3>
+      <p>Configuração inicial + Atualização de Software</p>
+      <p><strong>🔥 R$40</strong></p>
+      <button class="btn-promo" onclick="enviarWhatsApp('Pacote Básico - R$40')">Aproveitar</button>
+    </div>
+
+    <div class="promo-card">
+      <h3>Pacote Avançado</h3>
+      <p>Reset + Transferência até 30GB</p>
+      <p><strong>🔥 R$70</strong></p>
+      <button class="btn-promo" onclick="enviarWhatsApp('Pacote Avançado - R$70')">Aproveitar</button>
+    </div>
+
+    <div class="promo-card">
+      <h3>Pacote Completo</h3>
+      <p>Configuração + Reset + Transferência + Otimização</p>
+      <p><strong>🔥 R$100</strong></p>
+      <button class="btn-promo" onclick="enviarWhatsApp('Pacote Completo - R$100')">Aproveitar</button>
+    </div>
+
+    <div class="promo-card">
+      <h3>Desbloqueio FRP</h3>
+      <p>Remoção de conta Google com suporte especializado</p>
+      <p><strong>🔥 R$90+</strong></p>
+      <button class="btn-promo" onclick="enviarWhatsApp('Desbloqueio FRP - R$90+')">Aproveitar</button>
+    </div>
+
+    <div class="promo-card">
+      <h3>Garantia Estendida</h3>
+      <p>Até 6 meses de cobertura extra para serviços realizados.</p>
+      <p><strong>🔥 R$50</strong></p>
+      <button class="btn-promo" onclick="enviarWhatsApp('Garantia Estendida - R$50')">Aproveitar</button>
+    </div>
+
+    <div class="promo-card">
+      <h3>Garantia Premium</h3>
+      <p>1 ano de suporte e manutenção inclusa.</p>
+      <p><strong>🔥 R$90</strong></p>
+      <button class="btn-promo" onclick="enviarWhatsApp('Garantia Premium - R$90')">Aproveitar</button>
+    </div>
+
+    <div class="promo-card">
+      <h3>Pagamento Facilitado</h3>
+      <p>Parcelamento sem juros em até 3x no PIX.</p>
+      <p><strong>🔥 Exclusivo p/ logados</strong></p>
+      <button class="btn-promo" onclick="enviarWhatsApp('Pagamento Facilitado - até 3x no PIX')">Aproveitar</button>
+    </div>
+
+    <div class="promo-card">
+      <h3>Pagamento com Prazo</h3>
+      <p>✅ Pague só daqui a 30 dias!</p>
+      <p><strong>🔥 Exclusivo para clientes logados</strong></p>
+      <button class="btn-promo" onclick="enviarWhatsApp('Pagamento com prazo - até 30 dias')">Aproveitar</button>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Assistência da SAMY | Área Exclusiva de Promoções
+  </footer>
+
+  <script>
+    function enviarWhatsApp(promo) {
+      let numero = "5592992560443"; // 📲 Seu número
+      let mensagem = `Olá! Gostaria de aproveitar a promoção: ${promo}`;
+      let url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
+      window.open(url, "_blank");
+    }
+
+    // Exibir e-mail do usuário logado (se usar Firebase Auth)
+    document.addEventListener("DOMContentLoaded", () => {
+      // 🔹 Se você quiser, pode pegar o email do Firebase e colocar aqui
+      let usuarioEmail = localStorage.getItem("usuarioEmail") || "usuário logado";
+      document.getElementById("welcomeBanner").innerText =
+        `👋 Bem-vindo à Área Exclusiva de Promoções, ${usuarioEmail}!`;
+    });
+  </script>
+</body>
+</html>
