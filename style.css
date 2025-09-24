@@ -343,3 +343,34 @@ footer {
 .fade-in {
   animation: fadeIn 1.5s ease forwards;
 }
+/* ====== Login ====== */
+.login {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.login h2 {
+  margin-bottom: 20px;
+  color: #ff0033;
+  text-shadow: 0 0 15px #ff0033;
+}
+
+.login form input {
+  background: #1c1c1c;
+  border: 2px solid #ff0033;
+  border-radius: 8px;
+  color: #fff;
+  padding: 14px;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+#promo {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(255,0,51,0.5);
+}
+
