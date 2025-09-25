@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assistência da SAMY</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("3unzZVumxdRQE3GS2"); // sua public key
+    })();
+  </script>
 </head>
 <body>
   <!-- Cabeçalho -->
@@ -110,11 +118,16 @@
     <div id="promo" style="display:none; margin-top:20px;"></div>
   </section>
 
-  <!-- Firebase (modular v9+) -->
+  <!-- Firebase + Cadastro + EmailJS -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged }
-      from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      signOut,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyCX3E_kKEYN2e0veEcFu6U6XoM6VTvPozc",
@@ -126,7 +139,6 @@
       measurementId: "G-91KP3LXVH1"
     };
 
-    // Inicializar Firebase
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
@@ -138,7 +150,7 @@
 
       signInWithEmailAndPassword(auth, email, pass)
         .then(() => {
-          window.location.href = "painel.html"; // redireciona para a página de promoções
+          window.location.href = "painel.html";
         })
         .catch(err => {
           document.getElementById("promo").style.display = "block";
@@ -146,14 +158,24 @@
         });
     });
 
-    // Registro
+    // Registro com envio de e-mail via EmailJS
     document.getElementById("registerBtn").addEventListener("click", () => {
       const email = document.getElementById("email").value;
       const pass = document.getElementById("password").value;
+      const nome = email.split("@")[0];
 
       createUserWithEmailAndPassword(auth, email, pass)
         .then(() => {
-          window.location.href = "painel.html"; // redireciona para a página de promoções
+          emailjs.send("service_auafd2i", "template_7flsk3z", {
+            to_name: nome,
+            to_email: email
+          }).then(() => {
+            console.log("E-mail de boas-vindas enviado com sucesso!");
+          }).catch(error => {
+            console.error("Erro ao enviar e-mail:", error);
+          });
+
+          window.location.href = "painel.html";
         })
         .catch(err => {
           document.getElementById("promo").style.display = "block";
@@ -168,17 +190,13 @@
 
     // Monitorar estado
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        document.getElementById("logoutBtn").style.display = "inline-block";
-      } else {
-        document.getElementById("logoutBtn").style.display = "none";
-      }
+      document.getElementById("logoutBtn").style.display = user ? "inline-block" : "none";
     });
   </script>
 
-  <!-- Script WhatsApp -->
+  <!-- WhatsApp -->
   <script>
-    document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+    document.getElementById("whatsappForm").addEventListener("submit", function (e) {
       e.preventDefault();
       let nome = document.getElementById("nome").value;
       let telefone = document.getElementById("telefone").value;
